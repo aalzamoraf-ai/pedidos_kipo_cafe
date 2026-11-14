@@ -17,7 +17,7 @@ function cardHTML(p) {
     <label>Jarabe<select class="syrup"><option value="">Sin jarabe</option>${EXTRAS.syrups.map((s) => `<option value="${s.id}">${s.label} (+${money(s.price)})</option>`).join('')}</select></label>
     <label>Shots extra (+${money(EXTRAS.shot.price)} c/u)<select class="shots">${Array.from({ length: EXTRAS.shot.max + 1 }, (_, n) => `<option>${n}</option>`).join('')}</select></label></details>` : '';
   return `<article class="card" data-id="${p.id}">
-    <div class="imgwrap"><img src="images/${p.id}.jpg" alt="${p.name}" loading="lazy">
+    <div class="imgwrap"><img src="/${p.id}.jpg" alt="${p.name}" loading="lazy">
       ${p.seasonal ? '<span class="badge">Por temporada</span>' : ''}${p.available ? '' : '<span class="badge off">Agotado</span>'}</div>
     <div class="cbody"><h3>${p.name}</h3><p class="desc">${p.desc}</p>${sizes}${custom}
     <button type="button" class="btn add" ${p.available ? '' : 'disabled'}></button></div></article>`;
